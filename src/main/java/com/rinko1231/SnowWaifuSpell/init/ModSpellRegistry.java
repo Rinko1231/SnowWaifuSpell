@@ -1,7 +1,6 @@
 package com.rinko1231.SnowWaifuSpell.init;
 
 
-
 import com.rinko1231.SnowWaifuSpell.spells.SummonSnowQueenSpell;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;

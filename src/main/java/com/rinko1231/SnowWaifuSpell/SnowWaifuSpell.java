@@ -1,23 +1,23 @@
 package com.rinko1231.SnowWaifuSpell;
 
 import com.rinko1231.SnowWaifuSpell.config.SnowWaifuConfig;
-import com.rinko1231.SnowWaifuSpell.init.EffectRegistry;
 import com.rinko1231.SnowWaifuSpell.init.ModEntityRegistry;
 import com.rinko1231.SnowWaifuSpell.init.ModItemRegistry;
 import com.rinko1231.SnowWaifuSpell.init.ModSpellRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModContainer;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import twilightforest.init.TFEntities;
 
+import static com.rinko1231.SnowWaifuSpell.config.SnowWaifuConfig.SPEC;
 
 
 @Mod(SnowWaifuSpell.MOD_ID)
@@ -29,8 +29,7 @@ public class SnowWaifuSpell {
         ModEntityRegistry.ENTITIES.register(modEventBus);
         ModSpellRegistry.register(modEventBus);
         ModItemRegistry.ITEMS.register(modEventBus);
-        EffectRegistry.register(modEventBus);
-        SnowWaifuConfig.setup();
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SPEC, "SnowWaifuSpellConfig.toml");
         MinecraftForge.EVENT_BUS.register(this);
     }
 

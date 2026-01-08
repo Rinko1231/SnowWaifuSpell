@@ -22,12 +22,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+
+import static com.rinko1231.SnowWaifuSpell.SnowWaifuSpell.MOD_ID;
 
 public class QueenSoulItem extends Item {
 
@@ -55,7 +56,9 @@ public class QueenSoulItem extends Item {
             int randomLevel = 1 + player.getRandom().nextInt(3); // 1~3
 
 
-            AbstractSpell snowQueenSpell = SpellRegistry.REGISTRY.get().getValue(ResourceLocation.tryParse("snowwaifuspell:summon_snow_queen"));
+            AbstractSpell snowQueenSpell = SpellRegistry.REGISTRY.get().getValue(
+                    new ResourceLocation(MOD_ID, "summon_snow_queen")
+            );
 
             if (snowQueenSpell != null) {
                 // 创建卷轴物品
@@ -91,8 +94,8 @@ public class QueenSoulItem extends Item {
     }
     @OnlyIn(Dist.CLIENT)
     @Override
-    public void appendHoverText(@NotNull ItemStack stack, Level worldIn, @NotNull List<Component> tooltip, @NotNull TooltipFlag flagIn) {
-        super.appendHoverText(stack, worldIn, tooltip, flagIn);
+    public void appendHoverText(@NotNull ItemStack stack, Level wordIn, @NotNull List<Component> tooltip, @NotNull TooltipFlag tooltipFlag) {
+        super.appendHoverText(stack, wordIn, tooltip, tooltipFlag);
 
         // 基础描述（总是显示）
         tooltip.add(Component.translatable("item.snowwaifuspell.snowqueensoul.desc1")

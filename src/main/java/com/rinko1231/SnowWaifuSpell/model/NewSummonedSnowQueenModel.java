@@ -1,7 +1,6 @@
 package com.rinko1231.SnowWaifuSpell.model;
 
 import com.rinko1231.SnowWaifuSpell.entity.SummonedSnowQueen;
-
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -37,7 +36,6 @@ public class NewSummonedSnowQueenModel extends HumanoidModel<SummonedSnowQueen> 
         crown.addOrReplaceChild("crown_back", CubeListBuilder.create().texOffs(44, 0).addBox(-5.0F, -4.0F, 0.0F, 10.0F, 4.0F, 0.0F), PartPose.offsetAndRotation(0.0F, -6.0F, 4.0F, (-(float)Math.PI / 8F), 0.0F, 0.0F));
         return LayerDefinition.create(meshdefinition, 64, 64);
     }
-
 
 
     @Override
